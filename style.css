@@ -1,0 +1,1011 @@
+/* Підключаємо красиві шрифти */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
+
+/* =========================================
+   ЗАВДАННЯ 3.2: Універсальний селектор *
+   Скидаємо стандартні відступи браузера
+========================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================================
+   БАЗОВІ НАЛАШТУВАННЯ
+========================================= */
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #fcfdfc;
+  color: #4a4a4a;
+  line-height: 1.6;
+}
+
+h2,
+h3 {
+  font-family: "Georgia", serif;
+  color: #799481;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: normal;
+}
+
+/* =========================================
+   ВЕЛИКИЙ ГОЛОВНИЙ ЕКРАН З ФОНОМ
+========================================= */
+.hero-fullscreen {
+  background-color: #e6ece8;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+    url("images/flowers.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* ПОВЕРНУЛИ НА ВЕСЬ ЕКРАН */
+  height: 100vh; /* Знову займає 100% екрану */
+  margin: 0; /* Прибрали відступи по боках */
+  border: none; /* Прибрали рамку */
+  border-radius: 0; /* Прибрали заокруглення */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+/* =========================================
+   ШАПКА (Логотип, Меню, Кнопка запису)
+========================================= */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 50px !important; /* Широкі відступи від країв екрана */
+  width: 100% !important;
+  max-width: none !important; /* ДОЗВОЛЯЄМО РОЗТЯГУВАТИСЯ */
+  margin: 0 !important;
+  box-sizing: border-box !important;
+  background-color: transparent;
+}
+
+/* Логотип в лівому верхньому кутку */
+/* ========================================= */
+.logo {
+  font-family: "Arial", sans-serif;
+  font-size: 13px;
+  letter-spacing: 2px;
+  line-height: 1.4;
+  text-align: center;
+}
+
+/* НАЛАШТУВАННЯ КОЛЬОРІВ ДЛЯ КОЖНОГО СЛОВА */
+.logo .word-1 {
+  color: #e09b9b; /* Рожевий колір для BLOOMING */
+}
+
+.logo .word-2 {
+  color: #8fa094; /* Сіро-зелений колір для BEAUTY */
+}
+
+.logo .word-3 {
+  color: #799481; /* Темніший зелений для SALON (можеш змінити) */
+}
+
+/* Вбиваємо старий відступ, який розтягував меню на Головній сторінці */
+header nav {
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 50px !important; /* Відсуваємо меню від кнопки */
+}
+
+/* Невеликий відступ для самого меню, щоб воно не прилипало до кнопки */
+header nav ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+header nav > ul > li > a {
+  text-decoration: none;
+  color: #4a4a4a;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s;
+}
+
+header nav > ul > li > a:hover {
+  color: #8fb198;
+}
+
+/* =========================================
+   БЛОК 2: ВИПАДАЮЧЕ МЕНЮ (Dropdown)
+========================================= */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Ховаємо сам список за замовчуванням */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: -20px;
+  background-color: rgba(255, 255, 255, 0.95); /* Напівпрозорий білий фон */
+  min-width: 200px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 10px 0;
+  z-index: 1000;
+}
+
+/* Змінюємо вигляд посилань у випадаючому меню */
+.dropdown-content li {
+  list-style: none; /* Прибираємо крапочки */
+}
+
+.dropdown-content li a {
+  display: block;
+  padding: 10px 20px;
+  color: #799481;
+  text-decoration: none;
+  text-transform: none; /* Відміняємо великі літери для краси */
+  font-size: 15px;
+  transition: background-color 0.3s;
+}
+
+.dropdown-content li a:hover {
+  background-color: #f4efef; /* Ніжний фон при наведенні */
+  color: #4a4a4a;
+}
+
+/* МАГІЯ: Показуємо меню, коли мишка наведена на слово "Послуги" */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+/* =========================================
+   ЦЕНТРАЛЬНИЙ ТЕКСТ (Назва та список)
+========================================= */
+.hero-content {
+  display: flex;
+  justify-content: space-between; /* МАГІЯ 1: Цей рядок автоматично розштовхує елементи максимально по краях */
+  align-items: center;
+  padding: 0 15%; /* МАГІЯ 2: Це відступ від країв екрану. 
+                      Якщо хочеш ще лівіше/правіше — зміни 8% на 5% або 3%. 
+                      Якщо занадто близько до краю — зроби 12% */
+}
+/* Величезний заголовок салону */
+.hero-title h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 130px; /* Твій поточний розмір шрифту */
+  color: #999999; /*8fa094*/
+
+  /* МАГІЯ ВИРІВНЮВАННЯ ТА ВІДСТУПІВ: */
+  text-align: center; /* Вирівнює слова по центру відносно один одного */
+  line-height: 1.1; /* Збільшує відстань між словами. Спробуй 1.1, 1.2 або 1.3, щоб знайти ідеал */
+
+  margin: 0;
+  font-weight: normal;
+}
+
+/* Список послуг справа на головному екрані */
+/* 1. Вимикаємо стандартні (зайві) крапки браузера і відступи */
+.hero-services ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* 2. Повертаємо великий розмір, білий колір та тінь тексту */
+.hero-services li {
+  font-size: 28px; /* Твій збільшений розмір */
+  color: #ffffff; /* Білий колір тексту */
+  margin-bottom: 12px; /* Відстань між рядками послуг */
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4); /* Тінь для читабельності */
+}
+
+/* 3. Малюємо наші власні красиві одинарні крапочки */
+.hero-services li::before {
+  content: "•  ";
+  color: #ffffff;
+}
+
+/* =========================================
+   КНОПКИ ТА ПЛАШКИ З ПЕРЕВАГАМИ (Зелені)
+========================================= */
+.benefits-banner {
+  display: flex;
+  justify-content: space-around;
+  padding: 0 50px 40px 50px;
+}
+
+.benefit-item,
+.btn-online {
+  background-color: #8fb198;
+  color: white;
+  padding: 12px 35px;
+  border-radius: 30px; /* Ідеально овальні краї */
+  font-size: 16px;
+  font-family: "Arial", sans-serif;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.btn-online {
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+}
+
+.btn-online:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(143, 177, 152, 0.4);
+}
+
+/* =========================================
+   ОСНОВНИЙ КОНТЕНТ (Нижня частина сайту)
+========================================= */
+main {
+  padding: 20px 20px 80px 20px; /* Додаємо простору навколо контенту */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* --- СЕКЦІЯ ПОСЛУГ (Сітка з іконками) --- */
+.services-section {
+  margin-bottom: 80px;
+}
+
+.services-section > p {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 40px auto;
+  color: #666;
+}
+
+.services-grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.service-item {
+  width: 140px;
+  text-align: center;
+}
+
+.service-item img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+.service-item p {
+  font-weight: bold;
+  color: #555;
+  font-size: 14px;
+}
+
+/* --- СЕКЦІЯ МАЙСТРІВ --- */
+.masters-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  margin-bottom: 80px;
+}
+
+.masters-section h2 {
+  width: 100%;
+}
+
+.masters-section article {
+  background-color: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  max-width: 300px;
+  text-align: center;
+}
+
+.masters-section h3 {
+  color: #4a4a4a;
+  margin-bottom: 10px;
+}
+
+/* --- СЕКЦІЯ ФОТОГАЛЕРЕЇ --- */
+.photo-gallery {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  list-style: none;
+  flex-wrap: wrap;
+  margin-bottom: 60px;
+}
+
+.photo-gallery article {
+  text-align: center;
+}
+
+.photo-gallery img {
+  width: 250px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* ЗАВДАННЯ 3.2: Псевдоклас :hover для фото */
+.photo-gallery img:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.photo-gallery h3 {
+  margin-top: 15px;
+  font-size: 18px;
+  color: #555;
+}
+
+.booking-call {
+  text-align: center;
+}
+
+/* =========================================
+   ПІДВАЛ (FOOTER)
+========================================= */
+footer {
+  background-color: #f4efef;
+  padding: 40px 20px;
+  text-align: center;
+  color: #555;
+}
+
+footer nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+footer address ul {
+  list-style: none;
+  margin-bottom: 20px;
+  font-style: normal;
+}
+
+footer a {
+  color: #799481;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+footer a:hover {
+  color: #4a4a4a;
+  text-decoration: underline;
+}
+
+/* ЗАВДАННЯ 3.2: Псевдоклас :last-child */
+footer p:last-child {
+  font-size: 13px;
+  color: #999;
+  margin-top: 20px;
+  border-top: 1px solid #e0e0e0;
+  padding-top: 20px;
+}
+
+/* =========================================
+   СТОРІНКА ПОСЛУГ (SERVICES.HTML)
+========================================= */
+
+/* Градієнтний фон для всієї сторінки, як у Фігмі */
+.services-page {
+  background: linear-gradient(
+    to bottom right,
+    rgba(247, 215, 216, 1),
+    rgba(160, 182, 171, 1)
+  );
+  position: relative;
+  min-height: 100vh;
+  margin: 0 !important;
+  padding: 0 !important; /* Жодних відступів, щоб усе могло торкатися країв! */
+}
+
+/* --- ASIDE (Блок знижки) --- */
+.discount-banner {
+  position: fixed;
+  top: 50%; /* Кажемо відступити рівно половину екрана зверху */
+  transform: translateY(
+    -50%
+  ); /* Ця магія центрує сам зелений квадратик ідеально по осі */
+  left: 20px;
+  z-index: 100;
+
+  background-color: #849b8a;
+  color: white;
+  font-family: "Great Vibes", cursive;
+  font-size: 36px; /* Збільшили шрифт (було 28px) */
+  padding: 40px 30px; /* Збільшили простір навколо тексту (було 30px 20px) */
+  text-align: center;
+  line-height: 1.2;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Овальні заголовки --- */
+.pill-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.pill-title h2 {
+  display: inline-block;
+  /* БУЛО: background-color: #eadddd; */
+  /* СТАЛО (напівпрозорий пудровий колір): */
+  background-color: rgba(234, 221, 221, 0.6);
+
+  color: #6a6a6a;
+  font-family: "Great Vibes", cursive;
+  font-size: 50px;
+  padding: 15px 80px;
+  border-radius: 50px;
+  margin: 0;
+}
+
+/* --- Ряд з іконками --- */
+.services-icons-row {
+  display: flex;
+  justify-content: center;
+  gap: 50px; /* Розсунули іконки ширше (було 30px) */
+  margin-bottom: 80px;
+  flex-wrap: wrap;
+}
+
+.icon-item {
+  text-align: center;
+  width: 140px;
+}
+
+/* --- Контейнер (наша "маска" з Фігми) --- */
+.circle-icon {
+  width: 140px; /* Більший круг (було 100px) */
+  height: 140px; /* Більший круг (було 100px) */
+  border: 2px solid #cdb4b4; /* Рожева обводка */
+  border-radius: 50%; /* Робить контейнер ідеальним кругом */
+  margin: 0 auto 15px auto;
+
+  /* ОСЬ ВОНА, МАГІЯ: */
+  overflow: hidden; /* Безжалісно відрізає всі квадратні кути фотографії, залишаючи лише круг! */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* --- Сама квадратна картинка всередині --- */
+.circle-icon img {
+  width: 100%; /* Картинка має заповнити весь круг по ширині */
+  height: 100%; /* Картинка має заповнити весь круг по висоті */
+
+  /* ДРУГА МАГІЯ: */
+  object-fit: cover; /* Працює точнісінько як режим "Fill" у Figma. Картинка ідеально заповнить круг і не розтягнеться/не сплюснеться */
+  object-position: center; /* Центрує важливу частину картинки чітко посередині */
+}
+
+.icon-item p {
+  color: #799481; /* Зелений текст */
+  font-size: 18px; /* Збільшили підписи під іконками (було 15px) */
+  font-weight: bold;
+}
+
+/* --- Сітка з відео --- */
+.video-grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px; /* Розсунули відео між собою (було 20px) */
+  margin-bottom: 40px;
+}
+
+.video-grid video {
+  width: 260px; /* Зробили відео ширшим (було 200px) */
+  height: 450px; /* Зробили відео вищим (було 350px) */
+  object-fit: cover;
+  background-color: #d9d9d9; /* Сірий фон, поки відео не завантажилось */
+  border-radius: 10px; /* Трохи заокруглимо кути відео */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Аудіоплеєр --- */
+.audio-requirement {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.audio-requirement p {
+  font-family: "Georgia", serif;
+  color: #799481;
+  margin-bottom: 10px;
+  font-size: 20px; /* Залишаємо тут тільки розмір тексту */
+}
+
+/* Додаємо новий окремий блок спеціально для плеєра */
+audio {
+  width: 400px; /* Зробили плеєр довшим */
+  height: 50px; /* Зробили його трохи товщим */
+}
+
+/* =========================================
+   СТОРІНКА ПРАЙСУ (PRICE.HTML)
+========================================= */
+
+.price-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.price-table {
+  width: 100%;
+  border-collapse: collapse; /* Прибираємо подвійні рамки */
+  background-color: rgba(255, 255, 255, 0.7); /* Напівпрозорість */
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.price-table th,
+.price-table td {
+  padding: 20px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.price-table th {
+  background-color: #849b8a;
+  color: white;
+  font-family: "Georgia", serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.category-row td {
+  background-color: rgba(234, 221, 221, 0.8);
+  font-weight: bold;
+  color: #6a6a6a;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+/* Ефект підсвічування рядка при наведенні */
+.price-table tr:hover:not(.category-row) {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* =========================================
+   СТОРІНКА МАЙСТРІВ ТА ГАЛЕРЕЯ (MASTERS.HTML)
+========================================= */
+
+.masters-page-section,
+.gallery-page-section {
+  max-width: 1100px;
+  margin: 0 auto 80px auto; /* Відступ між секціями */
+}
+
+/* --- СІТКА ПОЛАРОЇДІВ --- */
+.masters-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.polaroid-card {
+  background-color: #ffffff;
+  width: 280px;
+  padding: 15px 15px 30px 15px; /* Біла рамка, знизу ширша для тексту */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); /* Ніжна тінь */
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Анімація: картка підіймається при наведенні */
+.polaroid-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+}
+
+.polaroid-card img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover; /* Фото не сплющується */
+  margin-bottom: 15px;
+  background-color: #d9d9d9; /* Сірий фон, поки фото не завантажилось */
+}
+
+.polaroid-text {
+  text-align: center;
+}
+
+.polaroid-text h3 {
+  font-family: "Georgia", serif;
+  color: #4a4a4a;
+  font-size: 22px;
+  margin: 0 0 5px 0;
+}
+
+.polaroid-text p {
+  color: #799481;
+  font-size: 15px;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* --- ГАЛЕРЕЯ (ФОТО РОБІТ) --- */
+.gallery-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.gallery-item {
+  width: 320px;
+  height: 420px;
+  background-color: #d9d9d9;
+  overflow: hidden; /* Магія для ефекту зуму: відрізає все, що вилазить за рамки */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px; /* Легке заокруглення кутів, як у Фігмі */
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease; /* Плавний зум за 0.6 секунд */
+}
+
+/* Ефект розкішного збільшення фото при наведенні мишки */
+.gallery-item:hover img {
+  transform: scale(1.1); /* Збільшує фото на 10% */
+}
+
+/* =========================================
+   СТОРІНКА КОНТАКТІВ (НОВИЙ ДИЗАЙН З ФІГМИ)
+========================================= */
+
+.contact-content-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px 20px 80px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px; /* Відстань між усіма блоками */
+}
+
+/* --- 1. Список контактів --- */
+.figma-contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.figma-contact-list li {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.figma-contact-list img {
+  width: 55px; /* Зробила їх трохи більшими, щоб вони гармоніювали з великим текстом */
+  height: 55px;
+
+  /* ОСЬ ЦЯ МАГІЯ: */
+  border-radius: 50%; /* Робить рамку ідеальним колом */
+  object-fit: cover; /* Заповнює коло картинкою, безжально відрізаючи всі квадратні кути */
+
+  /* Додатково: легка тінь, щоб вони виглядали ще більш преміально (якщо хочеш) */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.figma-contact-list span {
+  font-family: "Great Vibes", cursive;
+  font-size: 32px;
+  color: #799481;
+}
+
+/* --- 2. Час роботи --- */
+.working-hours-block {
+  text-align: center;
+}
+
+.working-hours-block p {
+  color: #ffffff; /* Білий текст, як на макеті */
+  font-size: 26px;
+  font-weight: bold;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2); /* Легка тінь, щоб текст читався на градієнті */
+  margin: 5px 0;
+  letter-spacing: 1px;
+}
+
+/* --- 3. Зелений блок з формою --- */
+.green-form-box {
+  background-color: #849b8a; /* Твій зелений колір */
+  padding: 40px;
+  border-radius: 40px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Спеціальний білий овал для заголовка всередині зеленої форми */
+.pill-white h2 {
+  background-color: rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+  border-radius: 50px;
+  padding: 10px 60px;
+}
+
+/* МАГІЯ ВИРІВНЮВАННЯ: Сітка для форми (текст зліва, вікно справа) */
+.form-grid-layout {
+  display: grid;
+  grid-template-columns: 200px 1fr; /* Ліва колонка 200px, права займає все інше */
+  gap: 25px; /* Відстань між рядками */
+  align-items: center; /* Центрує текст по висоті віконця */
+  margin-top: 30px;
+}
+
+.form-grid-layout label {
+  color: #ffffff;
+  font-size: 16px;
+  text-align: left;
+}
+
+.form-grid-layout input {
+  background-color: #d9d9d9; /* Світло-сірий колір віконець */
+  border: none;
+  border-radius: 5px; /* Майже гострі кути, як на макеті */
+  padding: 12px 15px;
+  font-family: "Arial", sans-serif;
+  font-size: 16px;
+}
+
+.form-grid-layout input:focus {
+  outline: 2px solid #ffffff;
+}
+
+/* Рожева кнопка */
+.pink-submit-btn {
+  background-color: #e09b9b; /* Рожевий колір */
+  color: #4a4a4a;
+  border: none;
+  border-radius: 30px;
+  padding: 15px 40px;
+  font-size: 18px;
+  cursor: pointer;
+  font-family: inherit;
+  grid-column: 1 / -1; /* Змушує кнопку розтягнутися на обидві колонки і стати по центру */
+  justify-self: center; /* Центрує кнопку */
+  margin-top: 20px;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+}
+
+.pink-submit-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* --- 4. Блок "Як підготуватися" --- */
+/* =========================================
+   СТОРІНКА КОНТАКТІВ: ОНОВЛЕНИЙ ДИЗАЙН
+========================================= */
+
+/* Забезпечуємо центральне розміщення всього контенту */
+.contact-content-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px 20px 80px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Центруємо всі блоки */
+  gap: 40px; /* Відстань між усіма елементами */
+}
+
+/* --- Оновлений Блок підготовки (prep-box) --- */
+.prep-box {
+  background-color: rgba(255, 255, 255, 0.4); /* Дуже ніжна прозорість */
+  padding: 40px;
+  border-radius: 30px;
+  width: 100%;
+  max-width: 650px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03); /* Дуже легка тінь */
+  text-align: center; /* Центруємо заголовки і текст */
+  border: 1px solid rgba(121, 148, 129, 0.1); /* Ледь помітна рамка */
+}
+
+/* Семантичні заголовки (Вимога методички: H4, H5, H6) */
+.prep-box h4 {
+  color: #799481; /* Твій зелений */
+  font-size: 18px;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.prep-box h5 {
+  color: #799481;
+  font-size: 16px;
+  margin-bottom: 8px;
+  font-weight: normal;
+}
+
+.prep-box h6 {
+  color: #849b8a;
+  font-size: 14px;
+  margin-bottom: 20px;
+  font-weight: normal;
+  letter-spacing: 0.5px;
+}
+
+/* Нумерований список та форматування тексту */
+.prep-box ol {
+  color: #799481;
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Центруємо пункти списку */
+  gap: 15px; /* Відстань між пунктами */
+  list-style-position: inside; /* Номери списку також по центру */
+}
+
+/* Вкладений маркований список */
+.prep-box ul {
+  list-style-type: disc;
+  padding: 0;
+  margin: 10px 0 0 0;
+  color: #849b8a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ЗАМІНА "ВИРВИ ОКО" ЖОВТОГО (Стилізація тегу mark) */
+.prep-box {
+  background-color: rgba(255, 255, 255, 0.4);
+  padding: 40px 50px;
+  border-radius: 30px;
+  width: 100%;
+  max-width: 650px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(121, 148, 129, 0.1);
+  text-align: center; /* ЗАГОЛОВКИ ЗНОВУ ПО ЦЕНТРУ */
+}
+
+/* ... Стилі для h4, h5, h6 залишаються без змін ... */
+
+/* Нумерований список (ТЕПЕР ВІН ПО ЛІВОМУ КРАЮ) */
+.prep-box ol {
+  color: #799481;
+  font-size: 16px;
+  padding-left: 20px;
+  margin: 20px 0 0 0; /* Додала трохи відступу зверху від заголовків */
+  text-align: left; /* ТЕКСТ ПО ЛІВОМУ КРАЮ */
+  line-height: 1.8;
+  display: block; /* Повертаємо класичну поведінку списку */
+}
+
+.prep-box ol li {
+  margin-bottom: 12px;
+}
+
+/* Вкладений маркований список */
+.prep-box ul {
+  list-style-type: disc;
+  padding-left: 25px;
+  margin: 8px 0 0 0;
+  color: #849b8a;
+  display: block; /* Повертаємо класичну поведінку списку */
+}
+
+.prep-box ul li {
+  margin-bottom: 5px;
+}
+
+/* --- 5. Карта --- */
+.map-box {
+  width: 100%;
+  max-width: 800px;
+}
+
+.map-fullwidth {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  line-height: 0; /* Прибирає невидиму смужку під картою */
+}
+.map-fullwidth iframe {
+  border-radius: 0; /* Гострі кути */
+}
+
+/* =========================================
+   МЕНЮ В ПІДВАЛІ (FOOTER NAV)
+========================================= */
+
+.main-footer {
+  background-color: rgba(255, 255, 255, 0.4); /* Напівпрозорий білий */
+  padding: 40px 20px;
+  text-align: center;
+  color: #799481;
+  font-family: "Arial", sans-serif;
+  border-top: 1px solid rgba(121, 148, 129, 0.2);
+
+  /* Розтягуємо на всю ширину */
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Стилі для меню всередині підвалу */
+.footer-nav {
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.footer-nav a {
+  color: #799481;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.footer-nav a:hover {
+  color: #e09b9b;
+}
+
+.footer-info p {
+  margin: 5px 0;
+  font-size: 15px;
+}
+
+.copyright {
+  font-size: 12px;
+  color: #999;
+  margin-top: 20px;
+}
+
+mark {
+  /* Робимо ніжний рожевий фон замість агресивного жовтого */
+  background-color: #fce4e4;
+  /* Колір самого тексту залишаємо темнішим для читабельності */
+  color: #e09b9b;
+  /* Додаємо трошки відступів з боків, щоб текст не "задихався" у фоні */
+  padding: 2px 6px;
+  /* Заокруглюємо кути виділення, щоб воно виглядало м'яко */
+  border-radius: 4px;
+  font-weight: bold;
+  font-style: normal;
+}
