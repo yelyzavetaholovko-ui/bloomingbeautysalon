@@ -816,7 +816,7 @@ mark {
   color: #e09b9b;
   padding: 2px 6px; /*Відступи з боків */
   border-radius: 4px; /* закруглення кутів*/
-  font-weight: bold;
+  font-weight: normal;
   font-style: normal;
 }
 .figma-contact-list a {
