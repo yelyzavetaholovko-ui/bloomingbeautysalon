@@ -51,16 +51,16 @@ header {
   box-sizing: border-box;
   background-color: transparent;
 }
+/* Логотип в лівому верхньому куті */
 .logo {
-  /* Логотип в лівому верхньому куті */
   font-family: "Arial", sans-serif;
   font-size: 13px;
   letter-spacing: 2px;
   line-height: 1.4;
   text-align: center;
 }
+/* Визначення кольорів для кожного слова */
 .logo .word-1 {
-  /* Визначення кольорів для кожного слова */
   color: #e09b9b; /*Колір для BLOOMING */
 }
 .logo .word-2 {
@@ -93,13 +93,13 @@ header nav > ul > li > a {
 header nav > ul > li > a:hover {
   color: #8fb198;
 }
+/*Випадаюче меню*/
 .dropdown {
-  /*Випадаюче меню*/
   position: relative;
   display: inline-block;
 }
+/*Список прихований за замовчуванням */
 .dropdown-content {
-  /*Список прихований за замовчуванням */
   display: none;
   position: absolute;
   top: 100%;
@@ -123,24 +123,24 @@ header nav > ul > li > a:hover {
   font-size: 15px;
   transition: background-color 0.3s;
 }
+/* Зміна фона при наведенні */
 .dropdown-content li a:hover {
-  /* Зміна фона при наведенні */
   background-color: #f4efef;
   color: #4a4a4a;
 }
+/* Показ менюпри наведенні на "Послуги" */
 .dropdown:hover .dropdown-content {
-  /* Показ менюпри наведенні на "Послуги" */
   display: block;
 }
+/* Текст по центру і список послуг */
 .hero-content {
-  /* Текст по центру і список послуг */
   display: flex;
   justify-content: space-between; /* Автоматичне розміщення елементів по краях */
   align-items: center;
   padding: 0 15%; /* відступи від країв екрана */
 }
+/* Великий заголовок з назвою салону */
 .hero-title h1 {
-  /* Великий заголовок з назвою салону */
   font-family: "Playfair Display", serif;
   font-size: 130px;
   color: #999999;
@@ -149,8 +149,8 @@ header nav > ul > li > a:hover {
   margin: 0;
   font-weight: normal;
 }
+/* Список послуг справа на Головній */
 .hero-services ul {
-  /* Список послуг справа на Головній */
   list-style: none; /* Вимкнення стандартних крапок браузера */
   padding: 0;
   margin: 0;
@@ -258,8 +258,8 @@ main {
   color: #4a4a4a;
   margin-bottom: 10px;
 }
+/* Фото майстрів*/
 .photo-gallery {
-  /* Фото майстрів*/
   display: flex;
   justify-content: center;
   gap: 30px;
@@ -280,8 +280,8 @@ main {
     transform 0.3s ease,
     box-shadow 0.3s ease;
 }
+/*Псевдоклас :hover для фото */
 .photo-gallery img:hover {
-  /*Псевдоклас :hover для фото */
   transform: translateY(-10px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
@@ -323,8 +323,8 @@ footer a:hover {
   color: #4a4a4a;
   text-decoration: underline;
 }
+/* Псевдоклас :last-child */
 footer p:last-child {
-  /* Псевдоклас :last-child */
   font-size: 13px;
   color: #999;
   margin-top: 20px;
@@ -345,8 +345,8 @@ footer p:last-child {
   margin: 0;
   padding: 0;
 }
+/* Повідомлення Знижка */
 .discount-banner {
-  /* Повідомлення Знижка */
   position: fixed;
   top: 50%; /* Відступ половини екрана зверху */
   transform: translateY(-50%); /* Розміщення квадрата(знижки) по  */
@@ -362,8 +362,8 @@ footer p:last-child {
   line-height: 1.2;
   box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
 }
+/*Овальні заголовки*/
 .pill-title {
-  /*Овальні заголовки*/
   text-align: center;
   margin-bottom: 50px;
 }
@@ -377,8 +377,8 @@ footer p:last-child {
   border-radius: 50px;
   margin: 0;
 }
+/*Іконки з послугами*/
 .services-icons-row {
-  /*Іконки з послугами*/
   display: flex;
   justify-content: center;
   gap: 50px;
@@ -400,8 +400,8 @@ footer p:last-child {
   justify-content: center;
   align-items: center;
 }
+/* квадратні картинки в середині кругів*/
 .circle-icon img {
-  /* квадратні картинки в середині кругів*/
   width: 100%;
   height: 100%;
   object-fit: cover; /* Заповнення круга-іконки*/
@@ -412,8 +412,8 @@ footer p:last-child {
   font-size: 18px;
   font-weight: bold;
 }
+/* Сітка з відео*/
 .video-grid {
-  /* Сітка з відео*/
   display: flex;
   justify-content: center;
   gap: 40px; /* Відстань між відео*/
@@ -428,8 +428,8 @@ footer p:last-child {
   border-radius: 10px; /* Закруглення кутів відео */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+/* Аудіо*/
 .audio-requirement {
-  /* Аудіо*/
   text-align: center;
   margin-top: 30px;
 }
@@ -479,20 +479,19 @@ audio {
   text-align: center;
   font-size: 1.2em;
 }
+/* Ефект підсвічування рядка при наведенні */
 .price-table tr:hover:not(.category-row) {
-  /* Ефект підсвічування рядка при наведенні */
   background-color: rgba(255, 255, 255, 0.9);
 }
 
 /* Сторінка Майстри */
-
 .masters-page-section,
 .gallery-page-section {
   max-width: 1100px;
   margin: 0 auto 80px auto; /* Відступ між секціями */
 }
+/* Фото "полароїд"*/
 .masters-grid {
-  /* Фото "полароїд"*/
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -507,8 +506,8 @@ audio {
     transform 0.3s ease,
     box-shadow 0.3s ease;
 }
+/* Ефект піднімання фото при наведенні мишкою */
 .polaroid-card:hover {
-  /* Ефект піднімання фото при наведенні мишкою */
   transform: translateY(-10px);
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
 }
@@ -534,8 +533,8 @@ audio {
   font-weight: bold;
   margin: 0;
 }
+/* Фото робіт */
 .gallery-grid {
-  /* Фото робіт */
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -561,7 +560,6 @@ audio {
 }
 
 /*Сторінка Контакти*/
-
 .contact-content-wrapper {
   max-width: 800px;
   margin: 0 auto;
@@ -571,8 +569,8 @@ audio {
   align-items: center;
   gap: 40px; /* Відстань між усіма блоками */
 }
+/* Засоби зв'язатися*/
 .figma-contact-list {
-  /* Засоби зв'язатися*/
   list-style: none;
   padding: 0;
   margin: 0;
@@ -597,8 +595,8 @@ audio {
   font-size: 32px;
   color: #799481;
 }
+/*Час роботи */
 .working-hours-block {
-  /*Час роботи */
   text-align: center;
 }
 .working-hours-block p {
@@ -609,8 +607,8 @@ audio {
   margin: 5px 0;
   letter-spacing: 1px;
 }
+/* Форма для запису */
 .green-form-box {
-  /* Форма для запису */
   background-color: #849b8a;
   padding: 40px;
   border-radius: 40px;
@@ -618,15 +616,15 @@ audio {
   max-width: 600px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
+/* Фон для заголовка форми для запису */
 .pill-white h2 {
-  /* Фон для заголовка форми для запису */
   background-color: rgba(255, 255, 255, 0.4);
   color: #ffffff;
   border-radius: 50px;
   padding: 10px 60px;
 }
+/* Сітка для форми (текст зліва, вікно справа) */
 .form-grid-layout {
-  /* Сітка для форми (текст зліва, вікно справа) */
   display: grid;
   grid-template-columns: 200px 1fr;
   gap: 25px; /* Відстань між рядками */
@@ -649,8 +647,8 @@ audio {
 .form-grid-layout input:focus {
   outline: 2px solid #ffffff;
 }
+/* Кнопка "підтвердити запис" */
 .pink-submit-btn {
-  /* Кнопка "підтвердити запис" */
   background-color: #e09b9b;
   color: #4a4a4a;
   border: none;
@@ -670,8 +668,8 @@ audio {
   transform: scale(1.05);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
+/* "Як підготуватися до візиту"*/
 .contact-content-wrapper {
-  /* "Як підготуватися до візиту"*/
   max-width: 900px;
   margin: 0 auto;
   padding: 20px 20px 80px 20px;
@@ -680,6 +678,7 @@ audio {
   align-items: center; /* Всі блоки по центру*/
   gap: 40px; /* Відстань між усіма елементами */
 }
+/* Зміна вигляду тегу mark */
 .prep-box {
   background-color: rgba(255, 255, 255, 0.4); /* прозорість */
   padding: 40px;
@@ -709,8 +708,8 @@ audio {
   font-weight: normal;
   letter-spacing: 0.5px;
 }
+/* Нумерований список*/
 .prep-box ol {
-  /* Нумерований список*/
   color: #799481;
   font-size: 16px;
   padding: 0;
@@ -721,8 +720,11 @@ audio {
   gap: 15px; /* Відстань між пунктами */
   list-style-position: inside; /* Номери списку по центру */
 }
+.prep-box ol li {
+  margin-bottom: 12px;
+}
+/* Вкладений маркований список */
 .prep-box ul {
-  /* Вкладений маркований список */
   list-style-type: disc;
   padding: 0;
   margin: 10px 0 0 0;
@@ -732,19 +734,8 @@ audio {
   align-items: center;
   gap: 8px;
 }
-.prep-box {
-  /* Зміна вигляду тегу mark */
-  background-color: rgba(255, 255, 255, 0.4);
-  padding: 40px 50px;
-  border-radius: 30px;
-  width: 100%;
-  max-width: 650px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
-  border: 1px solid rgba(121, 148, 129, 0.1);
-  text-align: center;
-}
+/* Нумерований список*/
 .prep-box ol {
-  /* Нумерований список*/
   color: #799481;
   font-size: 16px;
   padding-left: 20px;
@@ -756,8 +747,8 @@ audio {
 .prep-box ol li {
   margin-bottom: 12px;
 }
+/* Вкладений маркований список */
 .prep-box ul {
-  /* Вкладений маркований список */
   list-style-type: disc;
   padding-left: 25px;
   margin: 8px 0 0 0;
@@ -767,8 +758,8 @@ audio {
 .prep-box ul li {
   margin-bottom: 5px;
 }
+/*Карта*/
 .map-box {
-  /*Карта*/
   width: 100%;
   max-width: 800px;
 }
@@ -783,7 +774,6 @@ audio {
 }
 
 /* Підвал*/
-
 .main-footer {
   background-color: rgba(255, 255, 255, 0.4);
   padding: 40px 20px;
@@ -795,8 +785,8 @@ audio {
   margin: 0;
   box-sizing: border-box;
 }
+/* Стилі для меню в підвалі */
 .footer-nav {
-  /* Стилі для меню в підвалі */
   margin-bottom: 25px;
   display: flex;
   justify-content: center;
