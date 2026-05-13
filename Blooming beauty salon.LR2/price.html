@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ціни - Blooming beauty salon</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="services-page">
+    <header>
+      <div class="logo">
+        <span class="word-1">BLOOMING</span><br />
+        <span class="word-2">BEAUTY</span><br />
+        <span class="word-3">SALON</span>
+      </div>
+      <nav>
+        <ul class="header__nav-list">
+          <li class="header__nav-item">
+            <a href="index.html" class="header__nav-link">Головна</a>
+          </li>
+          <li class="header__nav-item dropdown">
+            <a href="services.html" class="header__nav-link">Послуги ▾</a>
+            <ul class="dropdown-content">
+              <li><a href="price.html">Прайс-лист</a></li>
+            </ul>
+          </li>
+          <li class="header__nav-item">
+            <a href="masters.html" class="header__nav-link">Майстри</a>
+          </li>
+
+          <li class="header__nav-item">
+            <a href="reviews.html" class="header__nav-link">Відгуки</a>
+          </li>
+
+          <li class="header__nav-item">
+            <a href="contact.html" class="header__nav-link">Контакти</a>
+          </li>
+        </ul>
+      </nav>
+      <a
+        href="contact.html#booking-form"
+        class="btn-online"
+        style="
+          text-decoration: none;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          line-height: 1;
+        "
+        >Онлайн запис</a
+      >
+    </header>
+
+    <main class="price-container">
+      <aside class="discount-banner">
+        Знижка<br />10% на перший<br />візит!
+      </aside>
+
+      <div class="pill-title">
+        <h2>Прайс-лист</h2>
+      </div>
+
+      <table class="price-table">
+        <thead>
+          <tr>
+            <th>Процедура</th>
+            <th>Час</th>
+            <th>Ціна</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr id="hair" class="category-row">
+            <td colspan="3">Волосся</td>
+          </tr>
+          <tr>
+            <td>Фарбування коренів</td>
+            <td>1.5-2 год</td>
+            <td>від 1700 грн</td>
+          </tr>
+          <tr>
+            <td>Предпігментація/Репігментація/Зняття кольору</td>
+            <td>30 хв</td>
+            <td>від 600 грн</td>
+          </tr>
+          <tr>
+            <td>Airtouch</td>
+            <td>4-6 год</td>
+            <td>від 5500 грн</td>
+          </tr>
+          <tr>
+            <td>Контуринг/Money piece</td>
+            <td>2-3 год</td>
+            <td>від 1800 грн</td>
+          </tr>
+          <tr>
+            <td>Система інтенсивної реконструкції Habat</td>
+            <td>1 год</td>
+            <td>від 1900 грн</td>
+          </tr>
+          <tr>
+            <td>Стрижка</td>
+            <td>1 год</td>
+            <td>800-900 грн</td>
+          </tr>
+          <tr>
+            <td>Каскад/Зміна образу/Первинне каре</td>
+            <td>1-1.5 год</td>
+            <td>200-1000 грн</td>
+          </tr>
+          <tr>
+            <td>Стрижка чубчика</td>
+            <td>30 хв</td>
+            <td>250грн</td>
+          </tr>
+          <tr>
+            <td>Полірування посіченого волосся</td>
+            <td>1 год</td>
+            <td>700 грн</td>
+          </tr>
+          <tr>
+            <td>Укладка-пряме волосся</td>
+            <td>1 год</td>
+            <td>від 700 грн</td>
+          </tr>
+          <tr>
+            <td>Укладка-локони</td>
+            <td>1-1.5 год</td>
+            <td>від 700 грн</td>
+          </tr>
+
+          <tr id="face" class="category-row">
+            <td colspan="3">Брови та вії</td>
+          </tr>
+          <tr>
+            <td>Корекція брів</td>
+            <td>30 хв</td>
+            <td>300-350 грн</td>
+          </tr>
+          <tr>
+            <td>Фарбування брів фарбою/хною</td>
+            <td>30 хв</td>
+            <td>350 грн</td>
+          </tr>
+          <tr>
+            <td>Комплекс(корекція/оформлення + фарбування)</td>
+            <td>1 год</td>
+            <td>600 грн</td>
+          </tr>
+          <tr>
+            <td>Фарбування вій</td>
+            <td>30 хв</td>
+            <td>250 грн</td>
+          </tr>
+          <tr>
+            <td>Ламінування брів(корекція + ламінування + фарбування)</td>
+            <td>1 год</td>
+            <td>850 грн</td>
+          </tr>
+          <tr>
+            <td>Ламінування вій(ламінування + фарбування)</td>
+            <td>1 год</td>
+            <td>900 грн</td>
+          </tr>
+          <tr>
+            <td>Ботокс брів або вій</td>
+            <td>30 хв</td>
+            <td>+150 грн</td>
+          </tr>
+          <tr>
+            <td>Зняття нарощених вій</td>
+            <td>15 хв</td>
+            <td>150 грн</td>
+          </tr>
+          <tr id="makeup" class="category-row">
+            <td colspan="3">Макіяж</td>
+          </tr>
+          <tr>
+            <td>Денний макіяж</td>
+            <td>1 год</td>
+            <td>900 грн</td>
+          </tr>
+          <tr>
+            <td>Вечірній макіяж</td>
+            <td>1-1.5 год</td>
+            <td>1100 грн</td>
+          </tr>
+          <tr>
+            <td>Нюд(експрес макіяж)</td>
+            <td>1год</td>
+            <td>800 грн</td>
+          </tr>
+          <tr>
+            <td>Весільний/Для особливих подій</td>
+            <td>1-1.5 год</td>
+            <td>1600 грн</td>
+          </tr>
+
+          <tr id="nails" class="category-row">
+            <td colspan="3">Нігтьовий сервіс</td>
+          </tr>
+          <tr>
+            <td>Ремонт/нарощення 1 ніготь</td>
+            <td>10 хв</td>
+            <td>50 грн</td>
+          </tr>
+          <tr>
+            <td>Зняття без подальшого покриття</td>
+            <td>10 хв</td>
+            <td>150 грн</td>
+          </tr>
+          <tr>
+            <td>Зняття нарощених нігтів</td>
+            <td>10 хв</td>
+            <td>150 грн</td>
+          </tr>
+          <tr>
+            <td>Проблемні стопи/Складний педикюр</td>
+            <td>30 хв</td>
+            <td>150 грн</td>
+          </tr>
+          <tr>
+            <td>Манікюр(комбінований/класичний/апаратний)</td>
+            <td>1 год</td>
+            <td>550 грн</td>
+          </tr>
+          <tr>
+            <td>Японський манікюр</td>
+            <td>1 год</td>
+            <td>550 грн</td>
+          </tr>
+          <tr>
+            <td>Комплекс(зняття + манікюр + покриття гель-лак в один тон)</td>
+            <td>1.5-2год</td>
+            <td>850 грн</td>
+          </tr>
+          <tr>
+            <td>Манікюр + спа-догляд</td>
+            <td>1-1.5 год</td>
+            <td>750 грн</td>
+          </tr>
+          <tr>
+            <td>Японський педикюр</td>
+            <td>1 год</td>
+            <td>850 грн</td>
+          </tr>
+          <tr>
+            <td>Комплекс(педикюр + покриття гель-лак в один тон)</td>
+            <td>1.5 год</td>
+            <td>900 грн</td>
+          </tr>
+          <tr>
+            <td>Комплекс(педикюр без покриття + спа-догляд)</td>
+            <td>1.5 год</td>
+            <td>950 грн</td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+    <footer class="main-footer">
+      <nav class="footer__nav">
+        <a href="index.html" class="footer__link">Головна</a>
+        <a href="services.html" class="footer__link">Послуги</a>
+        <a href="masters.html" class="footer__link">Майстри</a>
+        <a href="reviews.html" class="footer__link">Відгуки</a>
+        <a href="contact.html" class="footer__link">Контакти</a>
+      </nav>
+
+      <div class="footer-info">
+        <p>bloomingbeauty@gmail.com | +38 (098) 866 44 57</p>
+        <p>Аерокосмічний проспект, 10/2, Харків</p>
+      </div>
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/bloomingbeauty" target="_blank"
+          >Instagram</a
+        >
+        <a href="https://www.viber.com/bloomingbeauty" target="_blank">Viber</a>
+      </div>
+      <p class="copyright">Всі права захищені. © 2026 Blooming beauty salon</p>
+    </footer>
+    <a href="#" class="floating-btn">🎁</a>
+  </body>
+</html>
